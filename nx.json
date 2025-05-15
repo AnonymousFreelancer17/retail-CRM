@@ -40,7 +40,8 @@
         "targetName": "test"
       },
       "exclude": [
-        "apps/auth-services-e2e/**/*"
+        "apps/auth-services-e2e/**/*",
+        "apps/api-gateway-e2e/**/*"
       ]
     },
     {
@@ -50,6 +51,16 @@
         "buildTargetName": "build",
         "devTargetName": "dev",
         "serveStaticTargetName": "serve-static",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    },
+    {
+      "plugin": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
         "buildDepsTargetName": "build-deps",
         "watchDepsTargetName": "watch-deps"
       }

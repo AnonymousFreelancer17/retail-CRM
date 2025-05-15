@@ -11,6 +11,12 @@
     },
     {
       "path": "./apps/frontend"
+    },
+    {
+      "path": "./apps/api-gateway-e2e"
+    },
+    {
+      "path": "./apps/api-gateway"
     }
   ]
 }
