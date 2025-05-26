@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from "cors";
-// import { errorMiddleware } from '../../../packages/error-handler/error-middleware';
+import { errorMiddleware } from '../../../packages/error-handler/error-middleware';
 import cookieParser from 'cookie-parser';
+import router from './routes/authRouter';
 
 const port = process.env.PORT ? Number(process.env.PORT) : 6001;
 
@@ -22,10 +23,12 @@ app.get('/', (req, res) => {
     res.send({ 'message': 'Hello API'});
 });
 
-// app.use(errorMiddleware);
+app.use("/api",router)
+
+app.use(errorMiddleware);
  
 const server = app.listen(port,()=>{
-    console.log(`Auth services are UP and running at http://localhost:${port}/api `);
+    console.log(`Auth services are UP and running at http://localhost:${port} `);
 })
 
 server.on("error" ,(err)=>{
